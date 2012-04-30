@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+<script type='text/javascript'>
+    function sum (a, b) {
+        return a + b;
+    };
+    document.write("myFunction.toString(): " + sum.toString() + "<br />");
+    document.write("myFunction.length: " + sum.length + "<br />"); //length is two because the object has two properties (length and tostring)
+    document.write("myFunction(1,2): " + sum(1, 2) + "<br />");
+
+    var processNumber = function (number, processor) {
+        return processor(number, number);
+    };
+    document.write("double(9): " + processNumber(9, sum) + "<br />");
+
+    var square = processNumber(9, function (a, b) {
+        return a * b;
+    });
+    document.write("square(9): " + square + "<br />");
+</script>
+</body>
+</html>

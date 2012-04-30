@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+    var car = {
+        doors: 5,
+        start: function () {
+            return "Vroom!";
+        }
+    };
+
+    document.write("car.start(): " + car.start() + "<br />");
+
+    var numbers = [2, 4, 6, 8];
+
+    document.write("numbers.length: " + numbers.length + "<br />");
+    document.write("numbers[2]: " + numbers[2] + "<br />");
+
+    var cars = [
+        { doors: 5, make: "Kia", model: "Spectra 5" },
+        { doors: 4, make: "VW", model: "Beetle", passengers: ["Clown 1", "Clown 2", "Clown 3"] }
+    ];
+
+    document.write("cars[0].model: " + cars[0].model + "<br />");
+    document.write("cars[1].passengers.length: " + cars[1].passengers.length + "<br />");
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+    var obj = new Object();
+
+    document.write("obj.echo: " + obj.echo + "<br />");
+
+    Object.prototype.echo = function () {
+        return this.toString();
+    };
+
+    document.write("obj.echo: " + obj.echo + "<br />");
+    document.write("obj.echo() result: " + obj.echo() + "<br />");
+
+    var str = "I AM A STRING";
+
+    document.write("str.echo: " + str.echo + "<br />");
+    document.write("str.echo() result: " + str.echo() + "<br />");
+    document.write("str.head: " + str.head + "<br />");
+    
+    String.prototype.head = function (length) {
+        return this.substr(0, length);
+    };
+
+    document.write("str.head: " + str.head + "<br />");
+    document.write("str.head(8) result: " + str.head(8) + "<br />");
+
+    document.write("new string.head(5) result: " + "1234567890".head(5) + "<br />");
+</script>
+</body>
+</html>

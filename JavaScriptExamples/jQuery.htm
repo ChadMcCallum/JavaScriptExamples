@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+    .age { background-color: Blue; }
+    .missingAge { background-color: Red; }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="firstName">Chad</td>
+                <td class="lastName">Emm</td>
+                <td class="age">28</td>
+            </tr>
+            <tr>
+                <td class="firstName">Fred</td>
+                <td class="lastName">Flintstone</td>
+                <td class="age">51</td>
+            </tr>
+            <tr>
+                <td class="firstName">Bugs</td>
+                <td class="lastName">Bunny (Chad's Favorite)</td>
+                <td>71</td>
+            </tr>
+        </tbody>
+    </table>
+    <input type="button" id="effect1" value="Effect 1"/>
+    <input type="button" id="effect2" value="Effect 2"/>
+    <input type="button" id="effect3" value="Effect 3"/>
+    <input type="button" id="effect4" value="Effect 4"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#effect1').bind('click', function () {
+                $('table').css("border", "dashed 3px green");
+            });
+            $('#effect2').click(function () {
+                $('td.firstName:contains("Chad"):not(:contains("!"))').append(" is AWESOME!");
+            });
+            $('#effect3').click(function () {
+                $(':button[value*=3]').attr('value', "I've been clicked!");
+            });
+            $('#effect4').click(function () {
+                $('tbody > tr:eq(2) > td:eq(2):not(.age)').addClass('missingAge');
+            });
+        });
+    </script>
+</body>
+</html>
