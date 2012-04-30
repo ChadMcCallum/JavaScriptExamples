@@ -5,6 +5,7 @@
 </head>
 <body>
 <script type="text/javascript">
+    //let's define a car object using JSON
     var car = {
         doors: 5,
         start: function () {
@@ -14,11 +15,13 @@
 
     document.write("car.start(): " + car.start() + "<br />");
 
+    //and here's an array
     var numbers = [2, 4, 6, 8];
 
     document.write("numbers.length: " + numbers.length + "<br />");
     document.write("numbers[2]: " + numbers[2] + "<br />");
 
+    //here's an array of objects
     var cars = [
         { doors: 5, make: "Kia", model: "Spectra 5" },
         { doors: 4, make: "VW", model: "Beetle", passengers: ["Clown 1", "Clown 2", "Clown 3"] }

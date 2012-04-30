@@ -6,9 +6,10 @@
 <body>
 <script type="text/javascript">
     var obj = new Object();
-
+    //echo isn't defined yet
     document.write("obj.echo: " + obj.echo + "<br />");
 
+    //let's define echo for all Objects
     Object.prototype.echo = function () {
         return this.toString();
     };
@@ -17,18 +18,19 @@
     document.write("obj.echo() result: " + obj.echo() + "<br />");
 
     var str = "I AM A STRING";
-
+    //strings can echo too
     document.write("str.echo: " + str.echo + "<br />");
     document.write("str.echo() result: " + str.echo() + "<br />");
     document.write("str.head: " + str.head + "<br />");
     
+    //let's modify string to have a head method
     String.prototype.head = function (length) {
         return this.substr(0, length);
     };
 
     document.write("str.head: " + str.head + "<br />");
     document.write("str.head(8) result: " + str.head(8) + "<br />");
-
+    //all strings from this point forward will have a head method, even new ones
     document.write("new string.head(5) result: " + "1234567890".head(5) + "<br />");
 </script>
 </body>

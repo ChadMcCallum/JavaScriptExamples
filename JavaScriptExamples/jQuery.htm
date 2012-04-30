@@ -42,15 +42,22 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $('#effect1').bind('click', function () {
+                //apply this css style to all "table" elements
                 $('table').css("border", "dashed 3px green");
             });
             $('#effect2').click(function () {
+                //select a td with the class "firstName", the text contains "Chad", and does not contain an exclimation mark
+                //and append " is AWESOME!" to the contents
                 $('td.firstName:contains("Chad"):not(:contains("!"))').append(" is AWESOME!");
             });
             $('#effect3').click(function () {
+                //select all input elements of type button where the value attribute contains '3'
+                //and set the value attribute to "I've been clicked!"
                 $(':button[value*=3]').attr('value', "I've been clicked!");
             });
             $('#effect4').click(function () {
+                //select 3rd tr immediate child of tbody, 3rd td of that tr, where the class is not "age"
+                //add a 'missingAge' css class to the element
                 $('tbody > tr:eq(2) > td:eq(2):not(.age)').addClass('missingAge');
             });
         });

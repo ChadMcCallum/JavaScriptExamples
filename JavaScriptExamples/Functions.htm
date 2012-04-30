@@ -5,18 +5,23 @@
 </head>
 <body>
 <script type='text/javascript'>
+    //declare a function
     function sum (a, b) {
         return a + b;
     };
+    //call object methods on the function
     document.write("myFunction.toString(): " + sum.toString() + "<br />");
     document.write("myFunction.length: " + sum.length + "<br />"); //length is two because the object has two properties (length and tostring)
     document.write("myFunction(1,2): " + sum(1, 2) + "<br />");
 
+    //another way of declaring a function
+    //and take a function as an argument
     var processNumber = function (number, processor) {
         return processor(number, number);
     };
     document.write("double(9): " + processNumber(9, sum) + "<br />");
 
+    //pass an anonymous functino as an argument
     var square = processNumber(9, function (a, b) {
         return a * b;
     });

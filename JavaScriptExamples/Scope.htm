@@ -6,6 +6,7 @@
 <body>
     <script type="text/javascript">
         function isOdd(number) {
+            //setting a variable with "var" defaults it to global scope
             globalString = "GLOBAL!!";
             if (number % 2 !== 0) {
                 var result = true;
@@ -18,7 +19,9 @@
         document.write("isOdd(5): " + isOdd(5) + "<br />");
     </script>
     <script type="text/javascript">
+        //redefine isOdd method
         function isOdd(number) {
+            //can access global variable defined above
             return globalString.length % 2 !== 0;
         }
         document.write("isOdd(5): " + isOdd(5) + "<br />");
@@ -28,11 +31,14 @@
         var obj = {
             name: "My Object",
             figure: function () {
+                //this will work
                 document.write("this.name: " + this.name + "<br />");
                 var currentObject = this;
                 (function () {
+                    //this will not work - current scope is "window"
                     document.write("inner this.name: " + this.name + "<br />");
                     document.write("inner this: " + this + "<br />");
+                    //this will work - accessing object within closure
                     document.write("inner currentObject.name: " + currentObject.name + "<br />");
                 } ());
             }
@@ -43,10 +49,13 @@
     <button id="buttonId" >assigned function</button>
     <button id="anonymous" >anonymous function</button>
     <script type="text/javascript">
+        //scope == window
         function fireMe() {
             alert("'this' === " + this.toString());
         }
+        //scope == button
         document.getElementById("buttonId").onclick = fireMe;
+        //scope == window
         document.getElementById("anonymous").onclick = function () {
             fireMe();
         };
